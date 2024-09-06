@@ -3,18 +3,18 @@ from anvil import *
 
 
 class ceb_layout(ceb_layoutTemplate):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
+    def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
 
-  def home_link_click(self, **event_args):
-    open_form('Home')
+    def home_link_click(self, **event_args):
+        open_form('Home')
 
-  def map_link_click(self, **event_args):
-    open_form('Map')
+    def map_link_click(self, **event_args):
+        open_form('Map')
 
-  def about_link_click(self, **event_args):
-    open_form('About')
+    def about_link_click(self, **event_args):
+        open_form('About')
 
-  def contact_link_click(self, **event_args):
-    open_form('Contact')
+    def contact_link_click(self, **event_args):
+        open_form('Contact')

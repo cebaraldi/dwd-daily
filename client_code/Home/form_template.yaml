@@ -1,2 +1,8 @@
+components_by_slot:
+  slot_1:
+  - layout_properties: {}
+    name: label_1
+    properties: {text: Home}
+    type: Label
 is_package: true
 layout: {type: 'form:ceb_layout'}

@@ -1,9 +1,9 @@
 components:
+- layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
 - components:
-  - components: []
-    name: content_panel
-    properties: {}
-    type: ColumnPanel
   - layout_properties: {}
     name: label_2
     properties: {text: 'ceb 2024, v0.9.4'}
@@ -14,27 +14,26 @@ components:
   type: FlowPanel
 - layout_properties: {slot: title}
   name: label_1
-  properties: {role: headline, text: DWD Daily Observations}
+  properties: {text: DWD Daily Observations}
   type: Label
 - components:
   - event_bindings: {click: home_link_click}
-    layout_properties: {grid_position: 'KDLHXX,RPINXW'}
+    layout_properties: {grid_position: 'ERGUBX,JJBVIP'}
     name: home_link
     properties: {text: Home}
     type: Link
-  - components: []
-    event_bindings: {click: map_link_click}
-    layout_properties: {grid_position: 'KDLHXX,RPINXW'}
+  - event_bindings: {click: map_link_click}
+    layout_properties: {grid_position: 'RJMZJM,JXOZBG'}
     name: map_link
     properties: {text: Map}
     type: Link
   - event_bindings: {click: about_link_click}
-    layout_properties: {grid_position: 'ULUCHN,EGGJNY'}
+    layout_properties: {grid_position: 'WCVKUV,XQOTHC'}
     name: about_link
     properties: {text: About}
     type: Link
   - event_bindings: {click: contact_link_click}
-    layout_properties: {grid_position: 'SZLLHI,JKICGG'}
+    layout_properties: {grid_position: 'ZOWTSL,TKBAGH'}
     name: contact_link
     properties: {text: Contact}
     type: Link
@@ -49,5 +48,5 @@ is_package: true
 slots:
   slot_1:
     index: 0
-    set_layout_properties: {grid_position: 'TCZZQR,KEDNDG'}
+    set_layout_properties: {grid_position: 'VADDNU,EGLMTV'}
     target: {name: content_panel, type: container}
