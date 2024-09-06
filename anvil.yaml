@@ -1,15 +1,18 @@
 allow_embedding: false
 dependencies: []
 name: DWD Daily
+native_deps: null
 package_name: DWD_Daily
 renamed: true
 runtime_options:
   client_version: '3'
+  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
   server_spec: {base: python310-standard}
   server_version: python3-sandbox
-  version: 2
+  version: 3
 services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup_form: Form1
+startup: {module: ceb_layout, type: form}
+startup_form: null
