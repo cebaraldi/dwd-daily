@@ -14,21 +14,17 @@ components:
   type: FlowPanel
 - layout_properties: {slot: title}
   name: label_1
-  properties: {text: DWD Daily Observations}
+  properties: {role: headline, text: DWD Daily Observations}
   type: Label
 - components:
   - layout_properties: {grid_position: 'KDLHXX,RPINXW'}
     name: link_2
     properties: {text: Home}
     type: Link
-  - components:
-    - layout_properties: {grid_position: 'XAUICA,RZAIRU'}
-      name: link_3
-      properties: {text: Map}
-      type: Link
+  - components: []
     layout_properties: {grid_position: 'KDLHXX,RPINXW'}
     name: link_1
-    properties: {}
+    properties: {text: Map}
     type: Link
   - layout_properties: {grid_position: 'ULUCHN,EGGJNY'}
     name: link_4
