@@ -39,24 +39,30 @@ def extract_observables(self):
     if self.rb_precipitation.selected:
         yval = Globals.observations['RSK']
         ylabel = 'Precipitation [mm]'
-    if self.rb_snowcover.selected:
+    if self.rb_snow_cover.selected:
         yval = Globals.observations['SHK_TAG']
         ylabel = 'Snow Cover [cm]'
-    if self.rb_ground_temperature.selected:
+    if self.rb_surface_temperature.selected:
         yval = Globals.observations['TGK']
         ylabel = 'Precipitation [℃]'
     if self.rb_vapor_pressure.selected:
         yval = Globals.observations['VPM']
         ylabel = 'Vapor Pressure [hPa]'
-    if self.rb_pressure.selected:
+    if self.rb_air_pressure.selected:
         yval = Globals.observations['PM']
         ylabel = 'Air Pressure [hPa]'
     if self.rb_humidity.selected:
         yval = Globals.observations['UPM']
-        ylabel = 'Realative Humidity [%]'
-    if self.rb_sunshine.selected:
+        ylabel = 'Relative Humidity [%]'
+    if self.rb_sunshine_duration.selected:
         yval = Globals.observations['SDK']
         ylabel = 'Sunshine Duration [h]'
+    if self.rb_wind_speed.selected:
+        yval = Globals.observations['FM']
+        ylabel = 'Wind Speed [m/s]'
+    if self.rb_wind_gust.selected:
+        yval = Globals.observations['FX']
+        ylabel = 'Wind Gust [m/s]'
   
     if not self.cb_statistics.checked:
         scatter_plot(self, wsid, ylabel, obsdate, yval)
@@ -160,31 +166,41 @@ class Home(HomeTemplate):
         Globals.check_globals()
 
     def rb_temperature_clicked(self, **event_args):
-        """This method is called when this radio button is selected"""
-        print('rb_temperature_clicked')
         extract_observables(self)
 
     def rb_precipitation_clicked(self, **event_args):
-       extract_observables(self)
+        extract_observables(self)
   
-    def rb_snowcover_clicked(self, **event_args):
+    def rb_snow_cover_clicked(self, **event_args):
         extract_observables(self)
   
     def rb_ground_temperature_clicked(self, **event_args):
-       extract_observables(self)
+        extract_observables(self)
   
     def rb_vapor_pressure_clicked(self, **event_args):
         extract_observables(self)
   
     def rb_pressure_clicked(self, **event_args):
-       extract_observables(self)
+        extract_observables(self)
   
     def rb_humidity_clicked(self, **event_args):
         extract_observables(self)
   
-    def rb_sunshine_clicked(self, **event_args):
-       extract_observables(self)
-  
+    def rb_sunshine_duration_clicked(self, **event_args):
+        extract_observables(self)
+
+    def rb_wind_speed_clicked(self, **event_args):
+        extract_observables(self)
+
+    def rb_wind_gust_clicked(self, **event_args):
+        extract_observables(self)
+
+    def rb_air_pressure_clicked(self, **event_args):
+        extract_observables(self)
+
+    def rb_surface_temperature_clicked(self, **event_args):
+        extract_observables(self)
+      
     def cb_recent_change(self, **event_args):
         """This method is called when this checkbox is checked or unchecked"""
         print('cb_recent_change')
@@ -196,3 +212,7 @@ class Home(HomeTemplate):
     def cb_statistics_change(self, **event_args):
         """This method is called when this checkbox is checked or unchecked"""
         print('cb_statistics_change')
+
+
+
+
