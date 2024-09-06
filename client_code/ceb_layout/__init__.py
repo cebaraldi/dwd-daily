@@ -7,4 +7,14 @@ class ceb_layout(ceb_layoutTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
+  def home_link_click(self, **event_args):
+    open_form('Home')
+
+  def map_link_click(self, **event_args):
+    open_form('Map')
+
+  def about_link_click(self, **event_args):
+    open_form('About')
+
+  def contact_link_click(self, **event_args):
+    open_form('Contact')
