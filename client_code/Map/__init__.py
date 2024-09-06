@@ -1,5 +1,6 @@
 from ._anvil_designer import MapTemplate
 from anvil import *
+import anvil.server
 
 
 class Map(MapTemplate):
