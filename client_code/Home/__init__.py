@@ -128,29 +128,29 @@ class Home(HomeTemplate):
             Globals.weather_stations = anvil.server.call('dl_to_weather_stations', url) # Main
             Globals.weather_stations_loaded = True
         Globals.regions = sorted(list(set(Globals.weather_stations['region'])))
-        self.region_dropdown.items = Globals.regions  
-        self.region_dropdown.placeholder = '<Please select a region>'
+        self.dd_regions.items = Globals.regions  
+        self.dd_regions.placeholder = '<Please select a region>'
     
         # debug
         Globals.check_globals()
   
-    def region_dropdown_change(self, **event_args):
+    def dd_regions_change(self, **event_args):
       def get_values_by_condition(list_a, list_b, condition):
           return [b for a, b in zip(list_a, list_b) if a == condition]
-      self.stations_dropdown.enabled = True
+      self.dd_stations.enabled = True
       Globals.weather_station = '<Please select a station>'
-      #print(f'selected region = {self.region_dropdown.selected_value}')
-      Globals.region = self.region_dropdown.selected_value
+      #print(f'selected region = {self.dd_regions.selected_value}')
+      Globals.region = self.dd_regions.selected_value
       ws = get_values_by_condition(Globals.weather_stations['region'],
                                    Globals.weather_stations['name'], 
                                    Globals.region)
       # debug
       print(); Globals.check_globals()
-      self.stations_dropdown.placeholder = '<Please select a station>'
-      self.stations_dropdown.items = ws
+      self.dd_stations.placeholder = '<Please select a station>'
+      self.dd_stations.items = ws
 
-    def stations_dropdown_change(self, **event_args):
-        Globals.weather_station = self.stations_dropdown.selected_value
+    def dd_stations_change(self, **event_args):
+        Globals.weather_station = self.dd_stations.selected_value
         Globals.observations_loaded =  False
         # debug
         print()

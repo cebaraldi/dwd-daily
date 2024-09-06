@@ -1,8 +1,87 @@
 components_by_slot:
   slot_1:
+  - components:
+    - layout_properties: {grid_position: 'NEEJWW,KHHGGB'}
+      name: cb_recent
+      properties: {checked: true, text: Recent}
+      type: CheckBox
+    - layout_properties: {grid_position: 'NEEJWW,ZAFXXW'}
+      name: cb_historical
+      properties: {text: Historical}
+      type: CheckBox
+    - layout_properties: {grid_position: 'NEEJWW,SJNIIG'}
+      name: cb_statistics
+      properties: {text: Summary statistics}
+      type: CheckBox
+    layout_properties: {}
+    name: outlined_card_1
+    properties: {role: outlined-card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'WINWGJ,DEYCCT'}
+      name: radio_button_1
+      properties: {group_name: radioGroup1, selected: true, text: radio_button_1}
+      type: RadioButton
+    - layout_properties: {grid_position: 'WINWGJ,OZYXAM'}
+      name: radio_button_2
+      properties: {group_name: radioGroup1, text: radio_button_2}
+      type: RadioButton
+    - layout_properties: {grid_position: 'WINWGJ,SBGYJM'}
+      name: radio_button_3
+      properties: {group_name: radioGroup1, text: radio_button_3}
+      type: RadioButton
+    - layout_properties: {grid_position: 'TUYLHG,YKUKLO'}
+      name: radio_button_4
+      properties: {text: radio_button_4}
+      type: RadioButton
+    - layout_properties: {grid_position: 'TUYLHG,JJPUWG'}
+      name: radio_button_5
+      properties: {text: radio_button_5}
+      type: RadioButton
+    - layout_properties: {grid_position: 'TUYLHG,KEGKWZ'}
+      name: radio_button_6
+      properties: {text: radio_button_6}
+      type: RadioButton
+    - layout_properties: {grid_position: 'XJEYGN,PEBLES'}
+      name: radio_button_7
+      properties: {text: radio_button_7}
+      type: RadioButton
+    - layout_properties: {grid_position: 'XJEYGN,USDMQO'}
+      name: radio_button_8
+      properties: {text: radio_button_8}
+      type: RadioButton
+    - layout_properties: {grid_position: 'XJEYGN,TZQMMA'}
+      name: radio_button_9
+      properties: {text: radio_button_9}
+      type: RadioButton
+    layout_properties: {}
+    name: outlined_card_2
+    properties: {role: outlined-card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'QFHJTL,RDPJNF'}
+      name: label_1
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'QFHJTL,GGOESD'}
+      name: label_2
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'RJKBCJ,IBTRPX'}
+      name: dd_regions
+      properties: {include_placeholder: true, placeholder: <Please select a region>}
+      type: DropDown
+    - layout_properties: {grid_position: 'RJKBCJ,IWGHXS'}
+      name: dd_stations
+      properties: {enabled: false, include_placeholder: true, placeholder: <Please select a station>}
+      type: DropDown
+    layout_properties: {}
+    name: outlined_card_3
+    properties: {role: outlined-card}
+    type: ColumnPanel
   - layout_properties: {}
-    name: label_1
-    properties: {text: Home}
-    type: Label
+    name: plot_1
+    properties: {}
+    type: Plot
 is_package: true
 layout: {type: 'form:ceb_layout'}

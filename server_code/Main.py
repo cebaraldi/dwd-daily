@@ -5,7 +5,6 @@ import anvil.server
 from datetime import datetime
 import os.path
 import requests
-#from Tools import *
 import csv
 import io
 import zipfile
