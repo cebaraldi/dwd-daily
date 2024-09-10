@@ -1,4 +1,22 @@
 allow_embedding: false
+db_schema:
+  feedback:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: email
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: feedback
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: date
+      type: datetime
+    server: full
+    title: feedback
 dependencies: []
 name: DWD Daily
 native_deps: null

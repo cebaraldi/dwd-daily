@@ -1,3 +1,6 @@
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 import anvil.server
 from datetime import datetime
 import os.path
@@ -91,3 +94,7 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
     df = df.drop('STATIONS_ID', axis=1) # already given as parameter
     dict_list = df.to_dict('list')
     return(dict_list)
+
+@anvil.server.callable
+def send_feedback(name, email, feedback):
+  pass
