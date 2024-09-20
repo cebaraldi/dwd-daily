@@ -29,7 +29,8 @@ components_by_slot:
     name: grid_panel_1
     properties: {}
     type: GridPanel
-  - layout_properties: {}
+  - event_bindings: {change: ta_feedback_change}
+    layout_properties: {}
     name: ta_feedback
     properties: {height: 183}
     type: TextArea

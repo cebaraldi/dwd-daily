@@ -99,11 +99,11 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
 @anvil.server.callable
 def send_feedback(name, email, feedback):
     anvil.email.send(
-      from_name={name},
-      to={email},
-      subject="Have you used the Anvil Forum?",
-      html='The Anvil <a href="https://anvil.works/forum">Forum</a> is friendly and informative.',
-      text="The Anvil Forum (https://anvil.works/forum) is friendly and informative.",
+      from_name=name,
+      to='cebaraldi@gmail.com',
+      subject=f"Feedback from {email}",
+      #html='The Anvil <a href="https://anvil.works/forum">Forum</a> is friendly and informative.',
+      text={feedback},
     )
 
 @anvil.server.callable
