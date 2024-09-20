@@ -33,7 +33,8 @@ components_by_slot:
     name: ta_feedback
     properties: {height: 183}
     type: TextArea
-  - layout_properties: {}
+  - event_bindings: {click: bt_submit_click}
+    layout_properties: {}
     name: bt_submit
     properties: {role: elevated-button, text: Submit}
     type: Button
