@@ -98,4 +98,23 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
 
 @anvil.server.callable
 def send_feedback(name, email, feedback):
-  pass
+    anvil.email.send(
+      from_name={name},
+      to={email},
+      subject="Have you used the Anvil Forum?",
+      html='The Anvil <a href="https://anvil.works/forum">Forum</a> is friendly and informative.',
+      text="The Anvil Forum (https://anvil.works/forum) is friendly and informative.",
+    )
+
+@anvil.server.callable
+def send_email(address):
+    anvil.email.send(
+      from_name="Anvil Forum",
+      to=address,
+      subject="Have you used the Anvil Forum?",
+      html='The Anvil <a href="https://anvil.works/forum">Forum</a> is friendly and informative.',
+      text="The Anvil Forum (https://anvil.works/forum) is friendly and informative.",
+    )
+    #alert("Email has been sent.")
+    #notification = Notification("Email has been sent.")
+    #notification.show(timeout=3) 
