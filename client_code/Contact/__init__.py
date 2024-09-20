@@ -16,7 +16,8 @@ class Contact(ContactTemplate):
         #feedback = self.ta_feeback.text
         feedback = "***"
         #if anvil.server.call('validate_email', email):
-        anvil.server.call('send_feedback', name, email, feedback)
+        #anvil.server.call('send_feedback', name, email, feedback)
+        anvil.server.call('send_feedback', 'cebaraldi@gmail.com')
         self.bt_submit.enabled = False
         self.tb_name.text = ''
         self.ta_feeback.text = ''
