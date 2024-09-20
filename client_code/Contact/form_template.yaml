@@ -29,9 +29,9 @@ components_by_slot:
     name: grid_panel_1
     properties: {}
     type: GridPanel
-  - event_bindings: {change: ta_feedback_change}
+  - event_bindings: {change: ta_feeback_change}
     layout_properties: {}
-    name: ta_feedback
+    name: ta_feeback
     properties: {height: 183}
     type: TextArea
   - event_bindings: {click: bt_submit_click}
