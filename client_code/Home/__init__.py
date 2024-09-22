@@ -22,6 +22,8 @@ def extract_observables(self):
     date_to = found_tuple[0][4]
   
     if not Globals.observations_loaded :
+        if not self.cb_recent.checked and not self.cb_historical.checked:
+            self.cb_recent.checked = True
         with Notification(f'Downloading observations of {Globals.weather_station}, please wait...'):
           Globals.observations = anvil.server.call('dl_zip', wsid, date_from, date_to, 
                                   self.cb_recent.checked, 

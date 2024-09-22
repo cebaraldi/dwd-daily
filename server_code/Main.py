@@ -80,18 +80,39 @@ def dict_to_dataframe(data_dict):
 def dl_zip(wsid, date_from, date_to, recent, historical):
     url = 'https://opendata.dwd.de/'
     path = 'climate_environment/CDC/observations_germany/climate/daily/kl/'
-    recent_path = path + 'recent/'
-    filename = f'tageswerte_KL_{wsid}_akt.zip'
-    url = url + recent_path + filename
-    body = {}
-    r = requests.get(url)
-    with closing(r), zipfile.ZipFile(io.BytesIO(r.content)) as archive:   
-        # print({member.filename: archive.read(member) for member in archive.infolist()})
-        body ={member.filename: archive.read(member) 
-              for member in archive.infolist() 
-              if (member.filename.startswith('produkt_klima_tag_'))
-              }
-    df = dict_to_dataframe(body)
+    if recent:
+        recent_path = path + 'recent/'
+        filename = f'tageswerte_KL_{wsid}_akt.zip'
+        url = url + recent_path + filename
+        body = {}
+        r = requests.get(url)
+        with closing(r), zipfile.ZipFile(io.BytesIO(r.content)) as archive:   
+            # print({member.filename: archive.read(member) for member in archive.infolist()})
+            body ={member.filename: archive.read(member) 
+                  for member in archive.infolist() 
+                  if (member.filename.startswith('produkt_klima_tag_'))
+                  }
+        dfr = dict_to_dataframe(body)
+        if not historical:
+            dfh = dfr[0:0]
+    if historical:          
+        recent_path = path + 'historical/'
+        filename = f'tageswerte_KL_{wsid}_{date_from.strftime("%Y%m%d")}_{date_to.strftime("%Y%m%d")}_hist.zip'
+        url = url + recent_path + filename
+        print(url)
+        body = {}
+        r = requests.get(url)
+        with closing(r), zipfile.ZipFile(io.BytesIO(r.content)) as archive:   
+            # print({member.filename: archive.read(member) for member in archive.infolist()})
+            body ={member.filename: archive.read(member) 
+                  for member in archive.infolist() 
+                  if (member.filename.startswith('produkt_klima_tag_'))
+                  }
+        dfh = dict_to_dataframe(body)
+        if not recent:
+          dfr = dfh[0:0]
+    df = pd.concat([dfr, dfh])
+    print(df.shape)
     df = df.drop('STATIONS_ID', axis=1) # already given as parameter
     dict_list = df.to_dict('list')
     return(dict_list)

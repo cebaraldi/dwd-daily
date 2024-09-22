@@ -7,7 +7,7 @@ components_by_slot:
       type: CheckBox
     - layout_properties: {grid_position: 'NEEJWW,ZAFXXW'}
       name: cb_historical
-      properties: {enabled: false, text: Historical}
+      properties: {enabled: true, text: Historical}
       type: CheckBox
     - layout_properties: {grid_position: 'NEEJWW,SJNIIG'}
       name: cb_statistics
