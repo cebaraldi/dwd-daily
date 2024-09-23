@@ -97,11 +97,12 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
             dfh = dfr[0:0]
     if historical:          
         recent_path = path + 'historical/'
-        filename = f'tageswerte_KL_{wsid}_{date_from.strftime("%Y%m%d")}_{date_to.strftime("%Y%m%d")}_hist.zip'
+        filename = f'tageswerte_KL_{wsid}_{date_from.strftime("%Y%m%d")}_*_hist.zip'
         url = url + recent_path + filename
         print(url)
         body = {}
         r = requests.get(url)
+        print(r)
         with closing(r), zipfile.ZipFile(io.BytesIO(r.content)) as archive:   
             # print({member.filename: archive.read(member) for member in archive.infolist()})
             body ={member.filename: archive.read(member) 
