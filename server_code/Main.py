@@ -100,14 +100,22 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
         filename = f'tageswerte_KL_{wsid}_{date_from.strftime("%Y%m%d")}_*_hist.zip'
         url = url + recent_path + filename
       
+        import paramiko
         import fnmatch
-        client = 'opendata.dwd.de'
-        sftp = client.open_sftp()
-        
-        for fn in sftp.listdir(url + recent_path):
-            if fnmatch.fnmatch(fn, filename):
-                print(fn)
       
+        # Replace with your actual SFTP server details
+        hostname = url #"your_sftp_server"
+        hostname = 'opendata.dwd.de'
+        port = 22
+        #username = "your_username"
+        #password = "your_password"
+        sftp = paramiko.SFTPClient.from_transport(paramiko.Transport((hostname, port)))
+        sftp.connect()
+
+        for filename in sftp.listdir(url + path):
+              if fnmatch.fnmatch(filename, "*.zip"):
+                  print(filename)
+        print('******')
         body = {}
         r = requests.get(url)
         print(r)
