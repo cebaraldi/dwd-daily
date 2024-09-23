@@ -99,7 +99,15 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
         recent_path = path + 'historical/'
         filename = f'tageswerte_KL_{wsid}_{date_from.strftime("%Y%m%d")}_*_hist.zip'
         url = url + recent_path + filename
-        print(url)
+      
+        import fnmatch
+        client = 'opendata.dwd.de'
+        sftp = client.open_sftp()
+        
+        for fn in sftp.listdir(url + recent_path):
+            if fnmatch.fnmatch(fn, filename):
+                print(fn)
+      
         body = {}
         r = requests.get(url)
         print(r)
