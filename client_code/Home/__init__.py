@@ -20,6 +20,10 @@ def extract_observables(self):
     wsid = found_tuple[0][0]
     date_from = found_tuple[0][3]
     date_to = found_tuple[0][4]
+
+    print(f'\n*** wsid = {wsid}')
+    print(f'\n*** date_from = {date_from}')
+    print(f'\n*** date_to = {date_to}')
   
     if not Globals.observations_loaded :
         if not self.cb_recent.checked and not self.cb_historical.checked:
