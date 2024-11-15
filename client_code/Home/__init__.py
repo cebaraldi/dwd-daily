@@ -21,10 +21,6 @@ def extract_observables(self):
     date_from = found_tuple[0][3]
     date_to = found_tuple[0][4]
 
-    print(f'\n*** wsid = {wsid}')
-    print(f'\n*** date_from = {date_from}')
-    print(f'\n*** date_to = {date_to}')
-  
     if not Globals.observations_loaded :
         if not self.cb_recent.checked and not self.cb_historical.checked:
             self.cb_recent.checked = True
@@ -132,7 +128,7 @@ class Home(HomeTemplate):
         self.init_components(**properties)
     
         # debug
-        print(); Globals.check_globals()
+        # print(); Globals.check_globals()
         
         # Download weather stations and fill dropdown component for region selection
         if not Globals.weather_stations_loaded:
@@ -142,9 +138,6 @@ class Home(HomeTemplate):
         Globals.regions = sorted(list(set(Globals.weather_stations['region'])))
         self.dd_regions.items = Globals.regions  
         self.dd_regions.placeholder = '<Please select a region>'
-    
-        # debug
-        Globals.check_globals()
   
     def dd_regions_change(self, **event_args):
       def get_values_by_condition(list_a, list_b, condition):
@@ -156,20 +149,13 @@ class Home(HomeTemplate):
       ws = get_values_by_condition(Globals.weather_stations['region'],
                                    Globals.weather_stations['name'], 
                                    Globals.region)
-      # debug
-      print(); Globals.check_globals()
       self.dd_stations.placeholder = '<Please select a station>'
       self.dd_stations.items = ws
 
     def dd_stations_change(self, **event_args):
         Globals.weather_station = self.dd_stations.selected_value
         Globals.observations_loaded =  False
-        # debug
-        print()
-        Globals.check_globals()     
         extract_observables(self)
-        # debug
-        Globals.check_globals()
 
     def rb_temperature_clicked(self, **event_args):
         extract_observables(self)
