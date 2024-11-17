@@ -140,8 +140,13 @@ def dl_zip(wsid, date_from, date_to, recent, historical):
         if not recent:
           dfr = dfh[0:0]
     
-    # Merge downloaded data frames
-    df = pd.concat([dfr, dfh])
+    # Merge downloaded data frames w/ only recent data not in historical
+    #df = pd.concat([dfr, dfh])
+    df = pd.concat([
+        dfh,
+        dfr[dfr['MESS_DATUM'].isin(dfh['MESS_DATUM']) == False]
+    ])
+
     df = df.drop('STATIONS_ID', axis=1) # already given as parameter
     dict_list = df.to_dict('list')
     return(dict_list)

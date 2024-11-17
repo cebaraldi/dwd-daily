@@ -77,7 +77,7 @@ def scatter_plot(self, wsid, ylabel, obsdate, yval):
     y = replace_negative_999(strings_to_floats(yval))
     count = sum(1 for e in y if e is not None)
     if count == 0:
-        Notification('No observations available!',  style="warning").show() 
+        Notification('No observations available.',  style="warning").show() 
     # Specify the layout
     layout = go.Layout(
         title=go.layout.Title(text=f'{wsid} - {Globals.weather_station} / {Globals.region}', x=0.5),
