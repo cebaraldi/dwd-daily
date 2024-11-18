@@ -142,6 +142,7 @@ class Home(HomeTemplate):
     def dd_regions_change(self, **event_args):
       def get_values_by_condition(list_a, list_b, condition):
           return [b for a, b in zip(list_a, list_b) if a == condition]
+      Globals.region_selected = True
       self.dd_stations.enabled = True
       Globals.weather_station = '<Please select a station>'
       #print(f'selected region = {self.dd_regions.selected_value}')
@@ -154,6 +155,7 @@ class Home(HomeTemplate):
 
     def dd_stations_change(self, **event_args):
         Globals.weather_station = self.dd_stations.selected_value
+        Globals.station_selected = True
         Globals.observations_loaded =  False
         extract_observables(self)
 

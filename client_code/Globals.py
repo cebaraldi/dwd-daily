@@ -24,6 +24,10 @@ weather_stations_loaded = False
 observations = {}
 observations_loaded = False
 
+# GUI selections
+region_selected = False
+staion_selected = False
+
 # Dropdown selection status and selected values
 region = '<Please select a region>'
 weather_station = '<Please select a station>'
