@@ -26,7 +26,7 @@ observations_loaded = False
 
 # GUI selections
 region_selected = False
-staion_selected = False
+station_selected = False
 
 # Dropdown selection status and selected values
 region = '<Please select a region>'
@@ -37,3 +37,5 @@ def check_globals():
     print(f'weather_station = {weather_station}')
     print(f'weather_stations_loaded = {weather_stations_loaded} # weather_stations available')
     print(f'observations_loaded = {observations_loaded} # observations available')
+    print(f'region selected = {region_selected}')
+    print(f'station selected = {station_selected}')

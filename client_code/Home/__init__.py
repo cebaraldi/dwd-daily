@@ -138,7 +138,9 @@ class Home(HomeTemplate):
         Globals.regions = sorted(list(set(Globals.weather_stations['region'])))
         self.dd_regions.items = Globals.regions  
         self.dd_regions.placeholder = '<Please select a region>'
-  
+        #Globals.region_selected = False
+        print(); Globals.check_globals()
+
     def dd_regions_change(self, **event_args):
       def get_values_by_condition(list_a, list_b, condition):
           return [b for a, b in zip(list_a, list_b) if a == condition]
@@ -152,12 +154,16 @@ class Home(HomeTemplate):
                                    Globals.region)
       self.dd_stations.placeholder = '<Please select a station>'
       self.dd_stations.items = ws
-
+      # debug
+      print(); Globals.check_globals()
+  
     def dd_stations_change(self, **event_args):
         Globals.weather_station = self.dd_stations.selected_value
         Globals.station_selected = True
         Globals.observations_loaded =  False
         extract_observables(self)
+        # debug
+        print(); Globals.check_globals()
 
     def rb_temperature_clicked(self, **event_args):
         extract_observables(self)
