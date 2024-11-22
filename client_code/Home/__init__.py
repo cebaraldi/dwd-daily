@@ -132,8 +132,9 @@ class Home(HomeTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)   
+        self.dd_regions.selected_value = Globals.region
         # debug
-        print(); Globals.check_globals()
+        # print(); Globals.check_globals()
         
         # Download weather stations and fill dropdown component for region selection
         if not Globals.weather_stations_loaded:
@@ -147,33 +148,19 @@ class Home(HomeTemplate):
         Globals.regions = sorted(list(set(Globals.weather_stations['region'])))
         self.dd_regions.items = Globals.regions  
         self.dd_regions.placeholder = Globals.region 
-        # if Globals.region_selected:
-            # self.dd_regions_change().raise_event('click')
-            # self.dd_regions.raise_event('change')
-            # print('raise_event(change)')
-            # self.dd_stations.enabled = True
   
     def dd_regions_change(self, **event_args):
       def get_values_by_condition(list_a, list_b, condition):
           return [b for a, b in zip(list_a, list_b) if a == condition]
       Globals.region_selected = True
       self.dd_stations.enabled = True
-      print('raise_event(change)')
-      # Globals.weather_station = '<Please select a station>'
-      #print(f'Globals.region = {Globals.region}')
       Globals.region = self.dd_regions.selected_value
-      print(f'Globals.region = {Globals.region}')
       ws = get_values_by_condition(Globals.weather_stations['region'],
                                    Globals.weather_stations['name'], 
                                    Globals.region)
-      # self.dd_stations.placeholder = '<Please select a station>'
       self.dd_stations.items = ws
-      print(ws)
-      # debug
-      print(); Globals.check_globals()      
       
     def dd_stations_change(self, **event_args):
-        print('dd_stations_change')
         Globals.weather_station = self.dd_stations.selected_value
         Globals.station_selected = True
         Globals.observations_loaded =  False

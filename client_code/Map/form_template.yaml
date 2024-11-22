@@ -3,7 +3,7 @@ components_by_slot:
   - event_bindings: {}
     layout_properties: {}
     name: map_of_germany
-    properties: {height: 552}
+    properties: {height: 663.5555419921875}
     type: GoogleMap
 is_package: true
 layout: {type: 'form:ceb_layout'}
