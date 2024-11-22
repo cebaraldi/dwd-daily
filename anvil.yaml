@@ -18,9 +18,9 @@ db_schema:
     server: full
     title: feedback
 dependencies: []
-name: DWD Daily
+name: DWD Daily v0.9.7
 native_deps: null
-package_name: DWD_Daily
+package_name: DWD_Daily_v0_9_7
 renamed: true
 runtime_options:
   client_version: '3'
