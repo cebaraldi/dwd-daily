@@ -169,6 +169,8 @@ class Home(HomeTemplate):
       # self.dd_stations.placeholder = '<Please select a station>'
       self.dd_stations.items = ws
       print(ws)
+      # debug
+      print(); Globals.check_globals()      
       
     def dd_stations_change(self, **event_args):
         print('dd_stations_change')
