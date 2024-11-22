@@ -132,8 +132,8 @@ class Home(HomeTemplate):
         
         # Download weather stations and fill dropdown component for region selection
         if not Globals.weather_stations_loaded:
-            #url = Globals.protocol + Globals.domain_name + Globals.historical_path + Globals.metadata
-            url = Globals.protocol + Globals.domain_name + Globals.recent_path + Globals.metadata
+            #url = Globals.scheme + '://' + Globals.host + '/' + Globals.historical_path + '/' + Globals.metadata
+            url = Globals.scheme + '://' + Globals.host + '/' + Globals.recent_path + '/' + Globals.metadata
             #print(url)
             Globals.weather_stations = anvil.server.call('dl_to_weather_stations', url) # Main
             Globals.weather_stations_loaded = True
