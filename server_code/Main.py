@@ -18,7 +18,7 @@ from ftplib import FTP
 
 
 @anvil.server.callable
-def dl_to_weather_stations(url):
+def dl_weather_stations(url):
     response = requests.get(url)
     if response.status_code == 200:
         lines = response.text.splitlines()
