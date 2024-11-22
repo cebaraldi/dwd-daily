@@ -167,9 +167,38 @@ class Home(HomeTemplate):
         extract_observables(self)
 
     def rb_temperature_clicked(self, **event_args):
+        Globals.rb_selected = self.rb_temperature.selected
+        print(Globals.rb_selected)
         extract_observables(self)
 
     def rb_precipitation_clicked(self, **event_args):
+        Globals.rb_selected = self.rb_temperature.selected
+        print(Globals.rb_selected)
+    # if self.rb_precipitation.selected:
+    #     yval = Globals.observations['RSK']
+    #     ylabel = 'Precipitation [mm]'
+    # if self.rb_snow_cover.selected:
+    #     yval = Globals.observations['SHK_TAG']
+    #     ylabel = 'Snow Cover [cm]'
+    # if self.rb_surface_temperature.selected:
+    #     yval = Globals.observations['TGK']
+    #     ylabel = 'Precipitation [℃]'
+    # if self.rb_vapor_pressure.selected:
+    #     yval = Globals.observations['VPM']
+    #     ylabel = 'Vapor Pressure [hPa]'
+    # if self.rb_air_pressure.selected:
+    #     yval = Globals.observations['PM']
+    #     ylabel = 'Air Pressure [hPa]'
+    # if self.rb_humidity.selected:
+    #     yval = Globals.observations['UPM']
+    #     ylabel = 'Relative Humidity [%]'
+    # if self.rb_sunshine_duration.selected:
+    #     yval = Globals.observations['SDK']
+    #     ylabel = 'Sunshine Duration [h]'
+    # if self.rb_wind_speed.selected:
+    #     yval = Globals.observations['FM']
+    #     ylabel = 'Wind Speed [m/s]'
+    # if self.rb_wind_gust.selected:
         extract_observables(self)
   
     def rb_snow_cover_clicked(self, **event_args):

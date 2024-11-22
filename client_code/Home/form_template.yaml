@@ -3,7 +3,7 @@ components_by_slot:
   - components:
     - layout_properties: {grid_position: 'NEEJWW,KHHGGB'}
       name: cb_recent
-      properties: {checked: true, text: Recent}
+      properties: {checked: false, text: Recent}
       type: CheckBox
     - layout_properties: {grid_position: 'NEEJWW,ZAFXXW'}
       name: cb_historical

@@ -33,6 +33,9 @@ station_selected = False
 region = '<Please select a region>'
 weather_station = '<Please select a station>'
 
+# Radio button selection
+rb_selected = None 
+
 def check_globals():
     print(f'\nregion = {region}')
     print(f'weather_station = {weather_station}')
